@@ -1,6 +1,6 @@
 # TrainingLabs
 
-This repository is owned by Pranav More.
+This repository is owned by Pranav More. It is created for Advance Java trainings.
 
 Pre-requisite:
 
