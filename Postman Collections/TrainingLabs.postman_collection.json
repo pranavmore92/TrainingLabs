@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "8c16b869-e4d3-4b64-918b-ea158c8b3e2a",
+		"name": "TrainingLabs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28103450"
+	},
+	"item": [
+		{
+			"name": "2.0-SpringTransaction-RegisterBus",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"agencyName\": \"Pranav Travels\",\n    \"busType\": \"Sleeper\",\n    \"startDate\": \"2024-07-24T16:19:15.211773\",\n    \"fromLocation\": \"Mumbai\",\n    \"toLocation\": \"Pune\",\n    \"bookableSeats\": 20,\n    \"status\": \"Active\",\n    \"createdBy\": \"SYSTEM\",\n    \"createdAt\": \"2024-07-24T16:19:15.211864\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/bus",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"bus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2.0-SpringTransaction-GetAllRegisteredBuses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/bus",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"bus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.1-IsolationLevels-AddUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"username\": \"pranav\",\n    \"firstName\": \"Pranav\",\n    \"lastName\": \"More\",\n    \"emailId\": \"pranavmore@db.com\",\n    \"status\": \"Active\",\n    \"createdBy\": \"System\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.1-IsolationLevels-GetAllUsers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
