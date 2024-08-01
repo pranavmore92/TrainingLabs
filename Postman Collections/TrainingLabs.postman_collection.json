@@ -107,6 +107,57 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "2.0-SpringTransactions-BookSeat",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"booking\": {\n        \"id\": 1,\n        \"busId\": 1,\n        \"userId\": 1,\n        \"paymentId\": 1,\n        \"seatNo\": 1,\n        \"bookingDate\": \"2024-08-01\",\n        \"status\": \"Active\",\n        \"createdBy\": \"SYSTEM\",\n        \"createdAt\": \"2024-08-01T11:46:20.905298\"\n    },\n    \"payment\": {\n        \"id\": 1,\n        \"accountNo\": 123456,\n        \"ifscCode\": \"HDFC000001\",\n        \"amount\": 500,\n        \"paymentType\": \"Netbanking\",\n        \"status\": \"PAYMENT_DONE\",\n        \"createdBy\": \"SYSTEM\",\n        \"createdAt\": \"2024-08-01T11:46:20.905319\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/booking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"booking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2.0-SpringTransactions-GetAllBookings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/bookings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"bookings"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
