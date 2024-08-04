@@ -25,8 +25,13 @@ public class RegisterBusController {
     @PostMapping(value = "/bus")
     public ResponseEntity<Void> createBus(@RequestBody Bus bus) {
 
-        registerBusService.addBus(bus);
+        boolean status = registerBusService.addBus(bus);
 
-        return ResponseEntity.accepted().build();
+        if (status) {
+            return ResponseEntity.accepted().build();
+        } else {
+            return ResponseEntity.badRequest().build();
+        }
+
     }
 }
