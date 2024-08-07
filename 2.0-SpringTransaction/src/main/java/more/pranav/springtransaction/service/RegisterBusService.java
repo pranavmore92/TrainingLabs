@@ -19,57 +19,12 @@ import java.util.Optional;
 public class RegisterBusService {
     @Autowired
     private BusRepository busRepository;
-    private final TransactionTemplate transactionTemplate;
-
-    public RegisterBusService(PlatformTransactionManager transactionManager) {
-        this.transactionTemplate = new TransactionTemplate(transactionManager);
-    }
 
     @Transactional
     public boolean addBus(Bus bus) {
         busRepository.save(bus);
         return true;
     }
-
-    /*public boolean addBus(Bus bus) {
-        transactionTemplate.execute(new TransactionCallbackWithoutResult() {
-            @Override
-            protected void doInTransactionWithoutResult(TransactionStatus status) {
-                try{
-                    Optional<Bus> payment = busRepository.findById(bus.getId());
-                    if (payment.isPresent()) {
-                        throw new RuntimeException("Bus is already registered");
-                    }
-                    busRepository.save(bus);
-                }catch (Exception e) {
-                    status.setRollbackOnly();
-                }
-            }
-        });
-        return true;
-    }*/
-
-    /*public boolean addBus(Bus bus) {
-        Boolean status = transactionTemplate.execute(new TransactionCallback<Boolean>() {
-
-            @Override
-            public Boolean doInTransaction(TransactionStatus status) {
-                try{
-                    Optional<Bus> payment = busRepository.findById(bus.getId());
-                    if (payment.isPresent()) {
-                        throw new RuntimeException("Bus is already registered");
-                    }
-                    busRepository.save(bus);
-                }catch (Exception e) {
-                    status.setRollbackOnly();
-                    return false;
-                }
-                return true;
-            }
-        });
-
-        return (boolean) status;
-    }*/
 
     public List<Bus> getAllBuses() {
         return busRepository.findAll();
